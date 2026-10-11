@@ -101,7 +101,7 @@ function organizationSchema() {
   };
 }
 
-function ContactButtons({ message = 'Hi Ayur Mandir, I would like to know more.' }: { message?: string }) {
+function ContactButtons({ message = 'Hi Ayur Mandira, I would like to know more.' }: { message?: string }) {
   return (
     <div className="contact-inline">
       <a className="button button-primary" href={`tel:${site.phoneLink}`} data-testid="contact-call">
@@ -165,8 +165,8 @@ function Navbar() {
   return (
     <header className="site-header">
       <div className="nav-inner">
-        <Link href="/" className="brand-link" aria-label="Ayur Mandir home" data-testid="brand-home">
-          <img src="/assets/ayur-mandir-logo.png" alt="Ayur Mandir" width="112" height="66" />
+        <Link href="/" className="brand-link" aria-label="Ayur Mandira home" data-testid="brand-home">
+          <img src="/assets/ayur-mandir-logo.png" alt="Ayur Mandira" width="112" height="66" />
         </Link>
         <nav className="nav-links" aria-label="Primary navigation">
           {navigation.map((item) => (
@@ -180,7 +180,7 @@ function Navbar() {
             </Link>
           ))}
         </nav>
-        <a className="nav-order" href={whatsappUrl('Hi Ayur Mandir, I would like to know more.')} target="_blank" rel="noopener noreferrer" data-testid="nav-order-whatsapp">
+        <a className="nav-order" href={whatsappUrl('Hi Ayur Mandira, I would like to know more.')} target="_blank" rel="noopener noreferrer" data-testid="nav-order-whatsapp">
           <MessageCircle size={16} aria-hidden="true" /> Order on WhatsApp
         </a>
         <button
@@ -208,7 +208,7 @@ function Navbar() {
             {item.label}
           </Link>
         ))}
-        <a className="button button-primary" href={whatsappUrl('Hi Ayur Mandir, I would like to know more.')} target="_blank" rel="noopener noreferrer" tabIndex={open ? 0 : -1} data-testid="mobile-order-whatsapp">
+        <a className="button button-primary" href={whatsappUrl('Hi Ayur Mandira, I would like to know more.')} target="_blank" rel="noopener noreferrer" tabIndex={open ? 0 : -1} data-testid="mobile-order-whatsapp">
           <MessageCircle size={17} aria-hidden="true" /> Order on WhatsApp
         </a>
       </nav>
@@ -222,8 +222,8 @@ function Footer() {
       <div className="wrap">
         <div className="footer-grid">
           <div>
-            <Link href="/" className="footer-logo-panel" aria-label="Ayur Mandir home" data-testid="footer-brand">
-              <img src="/assets/ayur-mandir-logo.png" alt="Ayur Mandir" width="140" height="94" loading="lazy" />
+            <Link href="/" className="footer-logo-panel" aria-label="Ayur Mandira home" data-testid="footer-brand">
+              <img src="/assets/ayur-mandir-logo.png" alt="Ayur Mandira" width="140" height="94" loading="lazy" />
             </Link>
             <p className="footer-tagline">Discover thoughtfully selected herbal products for everyday wellness and balance.</p>
             <div className="footer-supplier-badge">
@@ -241,17 +241,17 @@ function Footer() {
           <div className="footer-contact">
             <h2>Get in touch</h2>
             <a href={`tel:${site.phoneLink}`}><Phone size={15} aria-hidden="true" /> <span>{site.phone}</span></a>
-            <a href={whatsappUrl('Hi Ayur Mandir, I would like to know more.')} target="_blank" rel="noopener noreferrer"><MessageCircle size={15} aria-hidden="true" /> <span>WhatsApp</span></a>
+            <a href={whatsappUrl('Hi Ayur Mandira, I would like to know more.')} target="_blank" rel="noopener noreferrer"><MessageCircle size={15} aria-hidden="true" /> <span>WhatsApp</span></a>
             <a href={`mailto:${site.email}`}><Mail size={15} aria-hidden="true" /> <span>{site.email}</span></a>
             <a href={site.instagramUrl} target="_blank" rel="noopener noreferrer"><Instagram size={15} aria-hidden="true" /> <span>{site.instagramHandle}</span></a>
             <p className="footer-location"><MapPin size={15} aria-hidden="true" /> <span>{site.city}, {site.region}</span></p>
           </div>
         </div>
         <p className="footer-disclaimer" data-testid="footer-disclaimer">
-          {medicalDisclaimer} All products distributed by Ayur Mandir are authentically procured exclusively from Vijayanagar Ayurvedic Centre (VAC), Bangalore.
+          {medicalDisclaimer} All products distributed by Ayur Mandira are authentically procured exclusively from Vijayanagar Ayurvedic Centre (VAC), Bangalore.
         </p>
         <div className="copyright">
-          <span>© {new Date().getFullYear()} Ayur Mandir. Exclusive supplier of VAC formulations. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} Ayur Mandira. Exclusive supplier of VAC formulations. All rights reserved.</span>
           <span>{site.city}, {site.region}</span>
         </div>
       </div>
@@ -265,8 +265,8 @@ function SiteShell({ children }: { children: ReactNode }) {
     ? products.find((p) => `/products/${p.slug}` === path)
     : null;
   const stickyWhatsappMsg = currentProduct
-    ? `Hi Ayur Mandir, I'd like to order ${currentProduct.name}.`
-    : 'Hi Ayur Mandir, I would like to know more.';
+    ? `Hi Ayur Mandira, I'd like to order ${currentProduct.name}.`
+    : 'Hi Ayur Mandira, I would like to know more.';
 
   return (
     <>
@@ -441,7 +441,7 @@ function AboutHomeSection() {
             <p className="eyebrow">Who We Are</p>
             <h2>Our story begins with mindful choices</h2>
             <p>
-              Ayur Mandir is a Bangalore-based supplier of genuine Ayurvedic supplements. We partner exclusively with <strong>Vijayanagar Ayurvedic Centre (VAC)</strong> to bring authentic, traditionally prepared wellness formulations directly to your doorstep.
+              Ayur Mandira is a Bangalore-based supplier of genuine Ayurvedic supplements. We partner exclusively with <strong>Vijayanagar Ayurvedic Centre (VAC)</strong> to bring authentic, traditionally prepared wellness formulations directly to your doorstep.
             </p>
             <div className="about-stat">
               <span className="about-stat-number">100%</span>
@@ -513,10 +513,10 @@ function NewsletterStrip() {
       <div className="wrap">
         <div className="newsletter-inner">
           <div className="newsletter-text">
-            <p>Explore herbal stories, product updates, and special offers from Ayur Mandir.</p>
+            <p>Explore herbal stories, product updates, and special offers from Ayur Mandira.</p>
           </div>
           <div className="newsletter-actions">
-            <a className="button button-primary" href={whatsappUrl('Hi Ayur Mandir, I want to stay updated on products.')} target="_blank" rel="noopener noreferrer">
+            <a className="button button-primary" href={whatsappUrl('Hi Ayur Mandira, I want to stay updated on products.')} target="_blank" rel="noopener noreferrer">
               <MessageCircle size={16} aria-hidden="true" /> Stay Connected
             </a>
           </div>
@@ -551,8 +551,8 @@ function HomePage() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
       <PageMeta
-        title="Ayurvedic Supplements in Bangalore | Ayur Mandir"
-        description="Ayur Mandir is the authorized distributor of Vijayanagar Ayurvedic Centre (VAC) products in Bangalore. Authentic Ayurvedic supplements, order via Call or WhatsApp."
+        title="Ayurvedic Supplements in Bangalore | Ayur Mandira"
+        description="Ayur Mandira is the authorized distributor of Vijayanagar Ayurvedic Centre (VAC) products in Bangalore. Authentic Ayurvedic supplements, order via Call or WhatsApp."
         path="/"
         schema={organizationSchema()}
       />
@@ -560,10 +560,10 @@ function HomePage() {
         <div className="wrap hero-grid">
           <div className="hero-copy">
             <div className="mobile-hero-logo" aria-hidden="true">
-              <img src="/assets/ayur-mandir-logo.png" alt="Ayur Mandir" width="80" height="48" />
+              <img src="/assets/ayur-mandir-logo.png" alt="Ayur Mandira" width="80" height="48" />
             </div>
             <div className="hero-tag-row">
-              <span className="hero-kicker">✦ Ayur Mandir · Bangalore</span>
+              <span className="hero-kicker">✦ Ayur Mandira · Bangalore</span>
               <span className="hero-supplier-pill">Exclusive Supplier of VAC</span>
             </div>
             <h1>Genuine Ayurvedic supplements, sourced with care.</h1>
@@ -572,7 +572,7 @@ function HomePage() {
             </p>
             <div className="hero-actions">
               <Link href="/products" className="button button-primary" data-testid="home-view-products">View Products</Link>
-              <a href={whatsappUrl('Hi Ayur Mandir, I would like to know more about VAC products.')} className="button button-secondary" target="_blank" rel="noopener noreferrer" data-testid="home-whatsapp">
+              <a href={whatsappUrl('Hi Ayur Mandira, I would like to know more about VAC products.')} className="button button-secondary" target="_blank" rel="noopener noreferrer" data-testid="home-whatsapp">
                 <MessageCircle size={17} aria-hidden="true" /> Order on WhatsApp
               </a>
             </div>
@@ -583,7 +583,7 @@ function HomePage() {
             </div>
           </div>
           <div className="hero-art desktop-hero-art">
-            <img src="/assets/ayur-mandir-logo.png" alt="Ayur Mandir temple emblem and Kannada wordmark" width="814" height="610" fetchPriority="high" />
+            <img src="/assets/ayur-mandir-logo.png" alt="Ayur Mandira temple emblem and Kannada wordmark" width="814" height="610" fetchPriority="high" />
           </div>
         </div>
       </section>
@@ -613,7 +613,7 @@ function HomePage() {
           <h2>How to order</h2>
           <div className="steps">
             <div className="step"><h3>Choose a product</h3><p>Browse our catalog or read our doctor-backed health guides to identify the right formulation.</p></div>
-            <div className="step"><h3>Call or WhatsApp us</h3><p>Get in touch directly with Ayur Mandir for batch availability, pricing, and advice.</p></div>
+            <div className="step"><h3>Call or WhatsApp us</h3><p>Get in touch directly with Ayur Mandira for batch availability, pricing, and advice.</p></div>
             <div className="step"><h3>Direct dispatch</h3><p>We pack your sealed VAC products securely and deliver them straight to your address.</p></div>
           </div>
           <ContactButtons />
@@ -630,17 +630,17 @@ function AboutPage() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
       <PageMeta
-        title="About Ayur Mandir | Bangalore Ayurvedic Supplier"
-        description="Learn about Ayur Mandir, Bangalore's authorized supplier of authentic Ayurvedic supplements exclusively from Vijayanagar Ayurvedic Centre (VAC)."
+        title="About Ayur Mandira | Bangalore Ayurvedic Supplier"
+        description="Learn about Ayur Mandira, Bangalore's authorized supplier of authentic Ayurvedic supplements exclusively from Vijayanagar Ayurvedic Centre (VAC)."
         path="/about"
         schema={organizationSchema()}
       />
       <section className="section">
         <div className="wrap">
           <Breadcrumb items={[{ name: 'Home', href: '/' }, { name: 'About Us' }]} />
-          <p className="eyebrow">About Ayur Mandir</p>
+          <p className="eyebrow">About Ayur Mandira</p>
           <h1>A trusted source for Ayurvedic supplements.</h1>
-          <p className="lead">Ayur Mandir is a Bangalore-based supplier of Ayurvedic supplements, partnering exclusively with Vijayanagar Ayurvedic Centre (VAC) to provide authenticated herbal products.</p>
+          <p className="lead">Ayur Mandira is a Bangalore-based supplier of Ayurvedic supplements, partnering exclusively with Vijayanagar Ayurvedic Centre (VAC) to provide authenticated herbal products.</p>
         </div>
       </section>
       <section className="section section-sand">
@@ -686,15 +686,15 @@ function ProductsPage() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
       <PageMeta
-        title="Ayurvedic Products | Ayur Mandir Bangalore"
-        description="Explore Ayur Mandir's Ayurvedic supplement range exclusively manufactured by Vijayanagar Ayurvedic Centre (VAC). Search diabetes, digestive, and skin formulations."
+        title="Ayurvedic Products | Ayur Mandira Bangalore"
+        description="Explore Ayur Mandira's Ayurvedic supplement range exclusively manufactured by Vijayanagar Ayurvedic Centre (VAC). Search diabetes, digestive, and skin formulations."
         path="/products"
         schema={organizationSchema()}
       />
       <section className="section section-tight">
         <div className="wrap">
           <Breadcrumb items={[{ name: 'Home', href: '/' }, { name: 'Products' }]} />
-          <p className="eyebrow">Ayur Mandir · VAC Product Catalog</p>
+          <p className="eyebrow">Ayur Mandira · VAC Product Catalog</p>
           <h1>Our Ayurvedic Formulations</h1>
           <p className="lead">
             Exclusively manufactured by <strong>Vijayanagar Ayurvedic Centre (VAC)</strong>. Search our range by condition or herb, or contact us directly on WhatsApp.
@@ -744,7 +744,7 @@ function ProductsPage() {
                   <button type="button" className="button button-primary" onClick={() => { setSearch(''); setSelectedCategory('All'); }}>
                     Clear Filters
                   </button>
-                  <a className="button button-secondary" href={whatsappUrl(`Hi Ayur Mandir, I am inquiring about product availability for: ${search}`)} target="_blank" rel="noopener noreferrer">
+                  <a className="button button-secondary" href={whatsappUrl(`Hi Ayur Mandira, I am inquiring about product availability for: ${search}`)} target="_blank" rel="noopener noreferrer">
                     <MessageCircle size={16} /> Ask on WhatsApp
                   </a>
                 </div>
@@ -795,7 +795,7 @@ function ProductNotFound({ slug }: { slug?: string }) {
         </div>
 
         <div style={{ marginTop: 40 }}>
-          <a className="button button-primary" href={whatsappUrl(`Hi Ayur Mandir, I was looking for product ${slug || ''} on your website. Is it available?`)} target="_blank" rel="noopener noreferrer">
+          <a className="button button-primary" href={whatsappUrl(`Hi Ayur Mandira, I was looking for product ${slug || ''} on your website. Is it available?`)} target="_blank" rel="noopener noreferrer">
             <MessageCircle size={16} /> Inquire on WhatsApp
           </a>
         </div>
@@ -827,15 +827,15 @@ function ProductDetailPage({ slug }: { slug: string }) {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
       <PageMeta
-        title={`${product.name} | Ayur Mandir`}
-        description={`${product.name} from Ayur Mandir. Sourced from Vijayanagar Ayurvedic Centre (VAC). Call or WhatsApp for pricing and availability.`}
+        title={`${product.name} | Ayur Mandira`}
+        description={`${product.name} from Ayur Mandira. Sourced from Vijayanagar Ayurvedic Centre (VAC). Call or WhatsApp for pricing and availability.`}
         path={path}
         schema={schema}
       />
       <section className="page-intro">
         <div className="wrap">
           <Breadcrumb items={[{ name: 'Home', href: '/' }, { name: 'Products', href: '/products' }, { name: product.name }]} />
-          <p className="eyebrow">Ayur Mandir · Product information</p>
+          <p className="eyebrow">Ayur Mandira · Product information</p>
         </div>
       </section>
       <section className="wrap product-detail">
@@ -857,7 +857,7 @@ function ProductDetailPage({ slug }: { slug: string }) {
             </a>
             <a
               className="button button-secondary"
-              href={whatsappUrl(`Hi Ayur Mandir, I'd like to order ${product.name}`)}
+              href={whatsappUrl(`Hi Ayur Mandira, I'd like to order ${product.name}`)}
               target="_blank"
               rel="noopener noreferrer"
               data-testid="product-quick-whatsapp"
@@ -876,7 +876,7 @@ function ProductDetailPage({ slug }: { slug: string }) {
           </div>
           <div className="order-panel">
             <h2>Order this product</h2>
-            <ContactButtons message={`Hi Ayur Mandir, I'd like to order ${product.name}`} />
+            <ContactButtons message={`Hi Ayur Mandira, I'd like to order ${product.name}`} />
           </div>
           <p className="disclaimer" style={{ marginTop: 24 }} data-testid="product-disclaimer">{medicalDisclaimer}</p>
         </div>
@@ -908,13 +908,13 @@ function BlogsPage() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
       <PageMeta
-        title="Ayurvedic Health & Wellness Articles | Ayur Mandir Bangalore"
+        title="Ayurvedic Health & Wellness Articles | Ayur Mandira Bangalore"
         description="Clinical Ayurvedic research and wellness articles on diabetic patient supplements, Pitta skin balance, and gut Agni restoration by Vijayanagar Ayurvedic Centre."
         path="/blogs"
         schema={{
           '@context': 'https://schema.org',
           '@type': 'Blog',
-          name: 'Ayur Mandir Ayurvedic Health Journal',
+          name: 'Ayur Mandira Ayurvedic Health Journal',
           description: 'Evidence-based Ayurvedic guidance on diabetic patient supplements, herbal skincare, and digestive wellness.',
         }}
       />
@@ -1025,7 +1025,7 @@ function BlogPostPage({ slug }: { slug: string }) {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
       <PageMeta
-        title={`${post.title} | Ayur Mandir Blog`}
+        title={`${post.title} | Ayur Mandira Blog`}
         description={post.summary}
         path={path}
         schema={schema}
@@ -1083,7 +1083,7 @@ function BlogPostPage({ slug }: { slug: string }) {
                     View Product Details
                   </Link>
                   <a
-                    href={whatsappUrl(`Hi Ayur Mandir, I read your article "${post.title}" and would like to order ${relatedProduct.name}.`)}
+                    href={whatsappUrl(`Hi Ayur Mandira, I read your article "${post.title}" and would like to order ${relatedProduct.name}.`)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="button button-secondary"
@@ -1105,8 +1105,8 @@ function TermsPage() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
       <PageMeta
-        title="Terms & Conditions | Ayur Mandir (Supplier & Distributor)"
-        description="Terms and conditions for Ayur Mandir from an authorized supplier perspective. Exclusive sourcing from Vijayanagar Ayurvedic Centre (VAC), Bangalore."
+        title="Terms & Conditions | Ayur Mandira (Supplier & Distributor)"
+        description="Terms and conditions for Ayur Mandira from an authorized supplier perspective. Exclusive sourcing from Vijayanagar Ayurvedic Centre (VAC), Bangalore."
         path="/terms"
         schema={organizationSchema()}
       />
@@ -1116,7 +1116,7 @@ function TermsPage() {
           <p className="eyebrow">Supplier Terms & Medical Disclaimers</p>
           <h1>Terms & Conditions</h1>
           <p className="lead">
-            Ayur Mandir operates as an authorized distributor and supplier of authentic Ayurvedic formulations in Bangalore.
+            Ayur Mandira operates as an authorized distributor and supplier of authentic Ayurvedic formulations in Bangalore.
             All products cataloged and distributed are exclusively manufactured and supplied by <strong>Vijayanagar Ayurvedic Centre (VAC)</strong>.
           </p>
 
@@ -1127,10 +1127,10 @@ function TermsPage() {
             </div>
             <h3>Exclusive Supply Partner: Vijayanagar Ayurvedic Centre (VAC)</h3>
             <p>
-              Please note that <strong>Vijayanagar Ayurvedic Centre (VAC)</strong> is the sole and exclusive manufacturing supplier for all products distributed through Ayur Mandir. We guarantee that 100% of the products delivered to our customers are authentic, sealed, and directly sourced from VAC without intermediate stockists.
+              Please note that <strong>Vijayanagar Ayurvedic Centre (VAC)</strong> is the sole and exclusive manufacturing supplier for all products distributed through Ayur Mandira. We guarantee that 100% of the products delivered to our customers are authentic, sealed, and directly sourced from VAC without intermediate stockists.
             </p>
             <div className="supplier-meta-grid">
-              <div><strong>Distributor:</strong> Ayur Mandir, Bangalore</div>
+              <div><strong>Distributor:</strong> Ayur Mandira, Bangalore</div>
               <div><strong>Sole Manufacturer / Supplier:</strong> Vijayanagar Ayurvedic Centre (VAC)</div>
               <div><strong>Jurisdiction:</strong> Bangalore, Karnataka, India</div>
               <div><strong>Effective Date:</strong> {supplierDetails.effectiveDate}</div>
@@ -1154,7 +1154,7 @@ function TermsPage() {
           <div className="terms-contact-callout">
             <h3>Need clarification regarding our supplier terms or VAC batch verification?</h3>
             <p>Reach out to us directly for batch numbers, certification, or practitioner inquiries.</p>
-            <ContactButtons message="Hi Ayur Mandir, I have a question regarding your supplier terms and VAC products." />
+            <ContactButtons message="Hi Ayur Mandira, I have a question regarding your supplier terms and VAC products." />
           </div>
         </div>
       </section>
@@ -1167,20 +1167,20 @@ function ContactPage() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
       <PageMeta
-        title="Contact Ayur Mandir | Call or WhatsApp"
-        description="Contact Ayur Mandir in Bangalore. Call or WhatsApp to order, email for general queries, or find us on Instagram."
+        title="Contact Ayur Mandira | Call or WhatsApp"
+        description="Contact Ayur Mandira in Bangalore. Call or WhatsApp to order, email for general queries, or find us on Instagram."
         path="/contact"
         schema={organizationSchema()}
       />
       <section className="section">
         <div className="wrap">
           <Breadcrumb items={[{ name: 'Home', href: '/' }, { name: 'Contact' }]} />
-          <p className="eyebrow">Contact Ayur Mandir</p>
+          <p className="eyebrow">Contact Ayur Mandira</p>
           <h1>How can we help?</h1>
           <p className="lead">For orders, get in touch by phone or WhatsApp. For general queries, email us. We are the exclusive supplier of Vijayanagar Ayurvedic Centre (VAC) products in Bangalore.</p>
           <div className="contact-options">
-            <article className="contact-option"><p className="eyebrow">Order by phone</p><h2>Call us</h2><p>Speak with Ayur Mandir directly.</p><a className="button button-primary" href={`tel:${site.phoneLink}`} data-testid="contact-page-call"><Phone size={17} aria-hidden="true" /> Call {site.phone}</a></article>
-            <article className="contact-option"><p className="eyebrow">Order by message</p><h2>WhatsApp us</h2><p>Send us a message about the product you are interested in.</p><a className="button button-primary" href={whatsappUrl('Hi Ayur Mandir, I would like to know more.')} target="_blank" rel="noopener noreferrer" data-testid="contact-page-whatsapp"><MessageCircle size={17} aria-hidden="true" /> WhatsApp Ayur Mandir</a></article>
+            <article className="contact-option"><p className="eyebrow">Order by phone</p><h2>Call us</h2><p>Speak with Ayur Mandira directly.</p><a className="button button-primary" href={`tel:${site.phoneLink}`} data-testid="contact-page-call"><Phone size={17} aria-hidden="true" /> Call {site.phone}</a></article>
+            <article className="contact-option"><p className="eyebrow">Order by message</p><h2>WhatsApp us</h2><p>Send us a message about the product you are interested in.</p><a className="button button-primary" href={whatsappUrl('Hi Ayur Mandira, I would like to know more.')} target="_blank" rel="noopener noreferrer" data-testid="contact-page-whatsapp"><MessageCircle size={17} aria-hidden="true" /> WhatsApp Ayur Mandira</a></article>
           </div>
           <div className="contact-details">
             <div className="contact-detail-card">
