@@ -72,8 +72,3 @@ onlyBuiltDependencies:
   - '@swc/core'
   - esbuild
   - unrs-resolver
-
-overrides:
-  "@esbuild-kit/esm-loader": "npm:tsx@^4.21.0"
-  esbuild: "0.28.2"
-  js-yaml: "4.3.2"
