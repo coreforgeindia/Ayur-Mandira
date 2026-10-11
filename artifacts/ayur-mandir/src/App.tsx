@@ -61,11 +61,11 @@ function PageMeta({ title, description, path, schema }: PageMetaProps) {
     setMeta('meta[property="og:title"]', 'content', title);
     setMeta('meta[property="og:description"]', 'content', description);
     setMeta('meta[property="og:url"]', 'content', canonicalUrl);
-    setMeta('meta[property="og:image"]', 'content', `${origin}/assets/ayur-mandir-logo.png`);
+    setMeta('meta[property="og:image"]', 'content', `${origin}/assets/ayur-mandir-logo-transparent.svg`);
     setMeta('meta[name="twitter:card"]', 'content', 'summary_large_image');
     setMeta('meta[name="twitter:title"]', 'content', title);
     setMeta('meta[name="twitter:description"]', 'content', description);
-    setMeta('meta[name="twitter:image"]', 'content', `${origin}/assets/ayur-mandir-logo.png`);
+    setMeta('meta[name="twitter:image"]', 'content', `${origin}/assets/ayur-mandir-logo-transparent.svg`);
 
     let canonical = document.head.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!canonical) {
@@ -166,7 +166,7 @@ function Navbar() {
     <header className="site-header">
       <div className="nav-inner">
         <Link href="/" className="brand-link" aria-label="Ayur Mandira home" data-testid="brand-home">
-          <img src="/assets/ayur-mandir-logo.png" alt="Ayur Mandira" width="112" height="66" />
+          <img src="/assets/ayur-mandir-logo-transparent.svg" alt="Ayur Mandira" width="112" height="66" />
         </Link>
         <nav className="nav-links" aria-label="Primary navigation">
           {navigation.map((item) => (
@@ -223,7 +223,7 @@ function Footer() {
         <div className="footer-grid">
           <div>
             <Link href="/" className="footer-logo-panel" aria-label="Ayur Mandira home" data-testid="footer-brand">
-              <img src="/assets/ayur-mandir-logo.png" alt="Ayur Mandira" width="140" height="94" loading="lazy" />
+              <img src="/assets/ayur-mandir-logo-transparent.svg" alt="Ayur Mandira" width="140" height="94" loading="lazy" />
             </Link>
             <p className="footer-tagline">Discover thoughtfully selected herbal products for everyday wellness and balance.</p>
             <div className="footer-supplier-badge">
@@ -560,7 +560,7 @@ function HomePage() {
         <div className="wrap hero-grid">
           <div className="hero-copy">
             <div className="mobile-hero-logo" aria-hidden="true">
-              <img src="/assets/ayur-mandir-logo.png" alt="Ayur Mandira" width="80" height="48" />
+              <img src="/assets/ayur-mandir-logo-transparent.svg" alt="Ayur Mandira" width="80" height="48" />
             </div>
             <div className="hero-tag-row">
               <span className="hero-kicker">✦ Ayur Mandira · Bangalore</span>
@@ -583,7 +583,7 @@ function HomePage() {
             </div>
           </div>
           <div className="hero-art desktop-hero-art">
-            <img src="/assets/ayur-mandir-logo.png" alt="Ayur Mandira temple emblem and Kannada wordmark" width="814" height="610" fetchPriority="high" />
+            <img src="/assets/ayur-mandir-logo-transparent.svg" alt="Ayur Mandira temple emblem and Kannada wordmark" width="814" height="610" fetchPriority="high" />
           </div>
         </div>
       </section>
@@ -1015,7 +1015,7 @@ function BlogPostPage({ slug }: { slug: string }) {
       name: site.name,
       logo: {
         '@type': 'ImageObject',
-        url: `${origin}/assets/ayur-mandir-logo.png`,
+        url: `${origin}/assets/ayur-mandir-logo-transparent.svg`,
       },
     },
     datePublished: '2026-10-08',
