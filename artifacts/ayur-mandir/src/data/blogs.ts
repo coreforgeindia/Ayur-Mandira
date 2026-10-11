@@ -23,7 +23,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'ayurvedic-diabetes-care-supplement-necessity',
     title: 'Why Ayurvedic Supplements are Essential for Diabetic Patients: Clinical Blood Sugar Balance & Herb Guide',
     category: 'Diabetes Care',
-    author: 'Ayur Mandir Clinical Research Panel',
+    author: 'Ayur Mandira Clinical Research Panel',
     authorRole: 'Herbal Diabetology & Metabolic Health Advisory',
     date: 'October 8, 2026',
     readTime: '6 min read',
@@ -119,7 +119,7 @@ export const blogPosts: BlogPost[] = [
         heading: '3. Recommended Daily Ayurvedic Skincare Ritual (Dinacharya)',
         paragraphs: [
           'For glowing, healthy skin, cleanse gently with mild herbal water, then apply a pea-sized amount of authentic Ayurvedic skin cream onto slightly damp skin using gentle upward circular motions. Applying this herbal care at night aligns with your body’s natural nocturnal cellular repair cycle.',
-          'Ayur Mandir supplies genuine skin formulations exclusively manufactured by Vijayanagar Ayurvedic Centre (VAC), prepared with verified botanical extracts and free from harsh synthetic parabens, artificial bleaches, and heavy artificial fragrances.',
+          'Ayur Mandira supplies genuine skin formulations exclusively manufactured by Vijayanagar Ayurvedic Centre (VAC), prepared with verified botanical extracts and free from harsh synthetic parabens, artificial bleaches, and heavy artificial fragrances.',
         ],
       },
     ],
@@ -169,7 +169,7 @@ export const blogPosts: BlogPost[] = [
         heading: '3. How to Use Ayurvedic Digestive Formulations for Lasting Gut Relief',
         paragraphs: [
           'Ayurvedic physicians suggest taking half to one teaspoon of ADP with warm water approximately 15 minutes before lunch and dinner. For individuals plagued by chronic acid reflux, heavy bloating, or irregular evacuation, combining this formulation with warm meals and avoiding ice-cold drinks restores effortless, regular digestion within a week.',
-          'All Ayur Mandir digestive care products are authentically sourced exclusively from Vijayanagar Ayurvedic Centre (VAC) in Bangalore, ensuring medical-grade potency, clean processing, and authentic classical herbal ratios.',
+          'All Ayur Mandira digestive care products are authentically sourced exclusively from Vijayanagar Ayurvedic Centre (VAC) in Bangalore, ensuring medical-grade potency, clean processing, and authentic classical herbal ratios.',
         ],
       },
     ],

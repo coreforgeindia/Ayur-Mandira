@@ -114,4 +114,4 @@ export const products: Product[] = [
 ];
 
 export const medicalDisclaimer =
-  'These products are authentic Ayurvedic supplements manufactured by Vijayanagar Ayurvedic Centre (VAC) and distributed by Ayur Mandir. They are not intended to substitute professional medical diagnosis or clinical prescription. Consult a qualified Ayurvedic physician (BAMS/MD) or healthcare professional before beginning any herbal regimen.';
+  'These products are authentic Ayurvedic supplements manufactured by Vijayanagar Ayurvedic Centre (VAC) and distributed by Ayur Mandira. They are not intended to substitute professional medical diagnosis or clinical prescription. Consult a qualified Ayurvedic physician (BAMS/MD) or healthcare professional before beginning any herbal regimen.';

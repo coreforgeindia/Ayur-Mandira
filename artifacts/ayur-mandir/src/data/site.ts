@@ -1,6 +1,6 @@
 export const site = {
-  name: 'Ayur Mandir',
-  kannadaName: 'ಆಯುರ್ ಮಂದಿರ್',
+  name: 'Ayur Mandira',
+  kannadaName: 'ಆಯುರ್ ಮಂದಿರ',
   phone: '+91 84969 54795',
   phoneLink: '+918496954795',
   whatsappNumber: '918496954795',
