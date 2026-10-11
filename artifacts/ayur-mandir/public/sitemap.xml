@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Replace https://REPLACE-WITH-PRODUCTION-DOMAIN with VITE_SITE_URL before publishing. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://REPLACE-WITH-PRODUCTION-DOMAIN/</loc></url>
+  <url><loc>https://REPLACE-WITH-PRODUCTION-DOMAIN/about</loc></url>
+  <url><loc>https://REPLACE-WITH-PRODUCTION-DOMAIN/products</loc></url>
+  <url><loc>https://REPLACE-WITH-PRODUCTION-DOMAIN/products/amla-turmeric-effervescent-tablet</loc></url>
+  <url><loc>https://REPLACE-WITH-PRODUCTION-DOMAIN/products/advanced-digestive-powder</loc></url>
+  <url><loc>https://REPLACE-WITH-PRODUCTION-DOMAIN/products/skin-cream</loc></url>
+  <url><loc>https://REPLACE-WITH-PRODUCTION-DOMAIN/contact</loc></url>
+</urlset>

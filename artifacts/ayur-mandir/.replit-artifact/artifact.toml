@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Ayur Mandir"
+description = "A calm, trustworthy website for Ayur Mandir, a Bangalore supplier of genuine Ayurvedic supplements, with product information and direct ordering by call or WhatsApp."
+version = "1.0.0"
+id = "artifacts/ayur-mandir"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24869
+
+[services.development]
+run = "pnpm --filter @workspace/ayur-mandir run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/ayur-mandir", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/ayur-mandir/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24869"
+BASE_PATH = "/"
