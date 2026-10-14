@@ -19,6 +19,7 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { site, whatsappUrl } from '@/data/site';
+import { productSeo, seo } from '@/data/seo';
 import { medicalDisclaimer, products, type Product } from '@/data/products';
 import { termsSections, supplierDetails } from '@/data/terms';
 import { blogPosts, type BlogPost } from '@/data/blogs';
@@ -551,8 +552,8 @@ function HomePage() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
       <PageMeta
-        title="Ayurvedic Supplements in Bangalore | Ayur Mandira"
-        description="Ayur Mandira is the authorized distributor of Vijayanagar Ayurvedic Centre (VAC) products in Bangalore. Authentic Ayurvedic supplements, order via Call or WhatsApp."
+        title={seo.home.title}
+        description={seo.home.description}
         path="/"
         schema={organizationSchema()}
       />
@@ -630,8 +631,8 @@ function AboutPage() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
       <PageMeta
-        title="About Ayur Mandira | Bangalore Ayurvedic Supplier"
-        description="Learn about Ayur Mandira, Bangalore's authorized supplier of authentic Ayurvedic supplements exclusively from Vijayanagar Ayurvedic Centre (VAC)."
+        title={seo.about.title}
+        description={seo.about.description}
         path="/about"
         schema={organizationSchema()}
       />
@@ -686,8 +687,8 @@ function ProductsPage() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
       <PageMeta
-        title="Ayurvedic Products | Ayur Mandira Bangalore"
-        description="Explore Ayur Mandira's Ayurvedic supplement range exclusively manufactured by Vijayanagar Ayurvedic Centre (VAC). Search diabetes, digestive, and skin formulations."
+        title={seo.products.title}
+        description={seo.products.description}
         path="/products"
         schema={organizationSchema()}
       />
@@ -813,6 +814,7 @@ function ProductDetailPage({ slug }: { slug: string }) {
   const otherProducts = products.filter((item) => item.slug !== product.slug);
   const path = `/products/${product.slug}`;
   const origin = site.siteUrl || (typeof window !== 'undefined' ? window.location.origin : '');
+  const metadata = productSeo(product);
 
   const schema = {
     '@context': 'https://schema.org',
@@ -827,8 +829,8 @@ function ProductDetailPage({ slug }: { slug: string }) {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
       <PageMeta
-        title={`${product.name} | Ayur Mandira`}
-        description={`${product.name} from Ayur Mandira. Sourced from Vijayanagar Ayurvedic Centre (VAC). Call or WhatsApp for pricing and availability.`}
+        title={metadata.title}
+        description={metadata.description}
         path={path}
         schema={schema}
       />
@@ -908,8 +910,8 @@ function BlogsPage() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
       <PageMeta
-        title="Ayurvedic Health & Wellness Articles | Ayur Mandira Bangalore"
-        description="Clinical Ayurvedic research and wellness articles on diabetic patient supplements, Pitta skin balance, and gut Agni restoration by Vijayanagar Ayurvedic Centre."
+        title={seo.blogs.title}
+        description={seo.blogs.description}
         path="/blogs"
         schema={{
           '@context': 'https://schema.org',
@@ -1105,8 +1107,8 @@ function TermsPage() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
       <PageMeta
-        title="Terms & Conditions | Ayur Mandira (Supplier & Distributor)"
-        description="Terms and conditions for Ayur Mandira from an authorized supplier perspective. Exclusive sourcing from Vijayanagar Ayurvedic Centre (VAC), Bangalore."
+        title={seo.terms.title}
+        description={seo.terms.description}
         path="/terms"
         schema={organizationSchema()}
       />
@@ -1167,8 +1169,8 @@ function ContactPage() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
       <PageMeta
-        title="Contact Ayur Mandira | Call or WhatsApp"
-        description="Contact Ayur Mandira in Bangalore. Call or WhatsApp to order, email for general queries, or find us on Instagram."
+        title={seo.contact.title}
+        description={seo.contact.description}
         path="/contact"
         schema={organizationSchema()}
       />

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ayurmandira.com/sitemap.xml
+Sitemap: https://www.ayurmandira.com/sitemap.xml

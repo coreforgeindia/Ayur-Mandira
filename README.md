@@ -146,3 +146,24 @@ pnpm --filter @workspace/ayur-mandir build
 * **Output Directory:** `dist/public` (when building from `artifacts/ayur-mandir`) or `artifacts/ayur-mandir/dist/public`
 * **Node Version:** `20.x` or `24.x`
 * **Package Manager:** `pnpm` (lockfile synchronized with v10.x standards)
+
+### Production domain and deployment
+
+The production canonical hostname is `https://www.ayurmandira.com`. The root `wrangler.jsonc` configures this hostname as a Worker Custom Domain. It must be attached to an active Cloudflare zone in the same Cloudflare account as the Worker. The production build emits route-specific HTML metadata and a noindex 404 document.
+
+1. Confirm `ayurmandira.com` is an **Active** zone in Cloudflare. The registrar nameservers should be the exact Cloudflare-assigned pair; review existing DNS records, especially MX and other mail records, before changing DNS.
+2. Deploy this project from the repository root:
+
+   ```bash
+   pnpm --filter @workspace/ayur-mandir build
+   pnpm dlx wrangler deploy --config wrangler.jsonc
+   ```
+
+3. Verify that the HTTPS homepage, `/robots.txt`, `/sitemap.xml`, and representative product and blog URLs serve this deployment. Submit `https://www.ayurmandira.com/sitemap.xml` in Google Search Console.
+4. The apex `ayurmandira.com` currently has no DNS answer. If visitors should also reach the site without `www`, configure an apex-to-`www` HTTPS redirect in Cloudflare after ensuring the apex hostname has an appropriate DNS record.
+
+Cloudflare account authentication is required to deploy from the CLI. The `VITE_SITE_URL` production setting, canonical tags, robots file, and sitemap all use the `www` hostname to match the live site.
+
+### Google Search Console and Tag Manager
+
+The site includes the Search Console HTML verification file and homepage verification meta tag. After deploying, open `https://www.ayurmandira.com/googleab541267a2934a7c.html` and confirm it returns the expected verification text, then select **Verify** in Search Console. Google Tag Manager container `GTM-P2TGJTKL` is installed in the document head and body; publish the GTM workspace changes in Tag Manager for configured tags to run.

@@ -2,8 +2,15 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "ayur-mandira",
   "compatibility_date": "2025-02-14",
+  "routes": [
+    {
+      "pattern": "www.ayurmandira.com",
+      "custom_domain": true
+    }
+  ],
   "assets": {
     "directory": "./artifacts/ayur-mandir/dist/public",
-    "not_found_handling": "single-page-application"
+    "html_handling": "drop-trailing-slash",
+    "not_found_handling": "404-page"
   }
 }
