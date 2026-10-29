@@ -8,8 +8,36 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
+      var consentCookie = document.cookie.match(/(?:^|;\s*)ayur_mandira_consent=(accepted|rejected)(?:;|$)/);
+      var hasConsent = consentCookie && consentCookie[1] === 'accepted';
+      gtag('consent', 'default', {
+        ad_storage: hasConsent ? 'granted' : 'denied',
+        ad_user_data: hasConsent ? 'granted' : 'denied',
+        ad_personalization: hasConsent ? 'granted' : 'denied',
+        analytics_storage: hasConsent ? 'granted' : 'denied',
+        wait_for_update: 500
+      });
       gtag('config', 'G-GV23XKSWZ0');
       gtag('config', 'AW-18506712553');
+    </script>
+    <script>
+      function gtag_report_conversion(url) {
+        var navigated = false;
+        var callback = function () {
+          if (typeof url !== 'undefined' && !navigated) {
+            navigated = true;
+            window.location.href = url;
+          }
+        };
+        gtag('event', 'conversion', {
+          send_to: 'AW-18506712553/27kYCWJd5q0dE0mL2PhE',
+          value: 1.0,
+          currency: 'INR',
+          event_callback: callback
+        });
+        window.setTimeout(callback, 2000);
+        return false;
+      }
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />

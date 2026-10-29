@@ -18,11 +18,13 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ErrorBoundary } from '@/components/error-boundary';
+import { CookieConsent } from '@/components/cookie-consent';
 import { site, whatsappUrl } from '@/data/site';
 import { productSeo, seo } from '@/data/seo';
 import { medicalDisclaimer, products, type Product } from '@/data/products';
 import { termsSections, supplierDetails } from '@/data/terms';
 import { blogPosts, type BlogPost } from '@/data/blogs';
+import { trackPhoneConversion } from '@/lib/google-ads';
 
 function ScrollToTop() {
   const [path] = useLocation();
@@ -105,7 +107,7 @@ function organizationSchema() {
 function ContactButtons({ message = 'Hi Ayur Mandira, I would like to know more.' }: { message?: string }) {
   return (
     <div className="contact-inline">
-      <a className="button button-primary" href={`tel:${site.phoneLink}`} data-testid="contact-call">
+      <a className="button button-primary" href={`tel:${site.phoneLink}`} onClick={trackPhoneConversion} data-testid="contact-call">
         <Phone size={17} aria-hidden="true" /> Call {site.phone}
       </a>
       <a className="button button-secondary" href={whatsappUrl(message)} target="_blank" rel="noopener noreferrer" data-testid="contact-whatsapp">
@@ -241,7 +243,7 @@ function Footer() {
           </nav>
           <div className="footer-contact">
             <h2>Get in touch</h2>
-            <a href={`tel:${site.phoneLink}`}><Phone size={15} aria-hidden="true" /> <span>{site.phone}</span></a>
+            <a href={`tel:${site.phoneLink}`} onClick={trackPhoneConversion}><Phone size={15} aria-hidden="true" /> <span>{site.phone}</span></a>
             <a href={whatsappUrl('Hi Ayur Mandira, I would like to know more.')} target="_blank" rel="noopener noreferrer"><MessageCircle size={15} aria-hidden="true" /> <span>WhatsApp</span></a>
             <a href={`mailto:${site.email}`}><Mail size={15} aria-hidden="true" /> <span>{site.email}</span></a>
             <a href={site.instagramUrl} target="_blank" rel="noopener noreferrer"><Instagram size={15} aria-hidden="true" /> <span>{site.instagramHandle}</span></a>
@@ -277,7 +279,7 @@ function SiteShell({ children }: { children: ReactNode }) {
       <main id="main-content">{children}</main>
       <Footer />
       <div className="mobile-order-bar" role="group" aria-label="Quick contact actions">
-        <a className="button button-primary" href={`tel:${site.phoneLink}`} data-testid="mobile-sticky-call">
+        <a className="button button-primary" href={`tel:${site.phoneLink}`} onClick={trackPhoneConversion} data-testid="mobile-sticky-call">
           <Phone size={16} aria-hidden="true" /> Call
         </a>
         <a
@@ -291,6 +293,7 @@ function SiteShell({ children }: { children: ReactNode }) {
           <MessageCircle size={16} aria-hidden="true" /> WhatsApp
         </a>
       </div>
+      <CookieConsent />
     </>
   );
 }
@@ -854,7 +857,7 @@ function ProductDetailPage({ slug }: { slug: string }) {
           </div>
           <p style={{ marginTop: 14 }}>Call or WhatsApp for pricing, batch availability, and delivery options.</p>
           <div className="product-quick-cta">
-            <a className="button button-primary" href={`tel:${site.phoneLink}`} data-testid="product-quick-call">
+            <a className="button button-primary" href={`tel:${site.phoneLink}`} onClick={trackPhoneConversion} data-testid="product-quick-call">
               <Phone size={15} aria-hidden="true" /> Call {site.phone}
             </a>
             <a
@@ -1181,7 +1184,7 @@ function ContactPage() {
           <h1>How can we help?</h1>
           <p className="lead">For orders, get in touch by phone or WhatsApp. For general queries, email us. We are the exclusive supplier of Vijayanagar Ayurvedic Centre (VAC) products in Bangalore.</p>
           <div className="contact-options">
-            <article className="contact-option"><p className="eyebrow">Order by phone</p><h2>Call us</h2><p>Speak with Ayur Mandira directly.</p><a className="button button-primary" href={`tel:${site.phoneLink}`} data-testid="contact-page-call"><Phone size={17} aria-hidden="true" /> Call {site.phone}</a></article>
+            <article className="contact-option"><p className="eyebrow">Order by phone</p><h2>Call us</h2><p>Speak with Ayur Mandira directly.</p><a className="button button-primary" href={`tel:${site.phoneLink}`} onClick={trackPhoneConversion} data-testid="contact-page-call"><Phone size={17} aria-hidden="true" /> Call {site.phone}</a></article>
             <article className="contact-option"><p className="eyebrow">Order by message</p><h2>WhatsApp us</h2><p>Send us a message about the product you are interested in.</p><a className="button button-primary" href={whatsappUrl('Hi Ayur Mandira, I would like to know more.')} target="_blank" rel="noopener noreferrer" data-testid="contact-page-whatsapp"><MessageCircle size={17} aria-hidden="true" /> WhatsApp Ayur Mandira</a></article>
           </div>
           <div className="contact-details">
