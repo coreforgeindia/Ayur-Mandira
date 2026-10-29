@@ -164,6 +164,6 @@ The production canonical hostname is `https://www.ayurmandira.com`. The root `wr
 
 Cloudflare account authentication is required to deploy from the CLI. The `VITE_SITE_URL` production setting, canonical tags, robots file, and sitemap all use the `www` hostname to match the live site.
 
-### Google Search Console and Tag Manager
+### Google Search Console and Google tags
 
-The site includes the Search Console HTML verification file and homepage verification meta tag. After deploying, open `https://www.ayurmandira.com/googleab541267a2934a7c.html` and confirm it returns the expected verification text, then select **Verify** in Search Console. Google Tag Manager container `GTM-P2TGJTKL` is installed in the document head and body; publish the GTM workspace changes in Tag Manager for configured tags to run.
+The site includes the Search Console HTML verification file and homepage verification meta tag. After deploying, open `https://www.ayurmandira.com/googleab541267a2934a7c.html` and confirm it returns the expected verification text, then select **Verify** in Search Console. The existing Google tag loads GA4 (`G-GV23XKSWZ0`) and Google Ads (`AW-18506712553`) from one `gtag.js` script. Google Tag Manager container `GTM-P2TGJTKL` is installed in the document head and body; publish the GTM workspace changes in Tag Manager for configured tags to run.
