@@ -1234,6 +1234,18 @@ p { margin: 0 0 20px; }
   text-decoration: none; transition: color 200ms ease; display: inline-flex; align-items: center;
 }
 .footer-links a:hover { color: #fff; }
+.footer-privacy-button {
+  min-height: 38px;
+  padding: 0;
+  border: 0;
+  color: rgba(255,255,255,.75);
+  background: transparent;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 200ms ease;
+}
+.footer-privacy-button:hover { color: #fff; }
 .footer-contact { display: flex; flex-direction: column; gap: 14px; }
 .footer-contact a, .footer-contact p {
   color: rgba(255,255,255,.8);

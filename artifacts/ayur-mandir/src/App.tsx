@@ -219,7 +219,7 @@ function Navbar() {
   );
 }
 
-function Footer() {
+function Footer({ onOpenPrivacyChoices }: { onOpenPrivacyChoices: () => void }) {
   return (
     <footer className="site-footer">
       <div className="wrap">
@@ -240,6 +240,9 @@ function Footer() {
               <Link key={item.href} href={item.href}>{item.label}</Link>
             ))}
             <Link href="/terms" data-testid="footer-terms">Terms & Conditions</Link>
+            <button type="button" className="footer-privacy-button" onClick={onOpenPrivacyChoices} data-testid="footer-privacy-choices">
+              Privacy choices
+            </button>
           </nav>
           <div className="footer-contact">
             <h2>Get in touch</h2>
@@ -264,6 +267,7 @@ function Footer() {
 
 function SiteShell({ children }: { children: ReactNode }) {
   const [path] = useLocation();
+  const [cookieConsentVisible, setCookieConsentVisible] = useState(false);
   const currentProduct = path.startsWith('/products/')
     ? products.find((p) => `/products/${p.slug}` === path)
     : null;
@@ -277,7 +281,7 @@ function SiteShell({ children }: { children: ReactNode }) {
       <a className="skip-link" href="#main-content">Skip to main content</a>
       <Navbar />
       <main id="main-content">{children}</main>
-      <Footer />
+      <Footer onOpenPrivacyChoices={() => setCookieConsentVisible(true)} />
       <div className="mobile-order-bar" role="group" aria-label="Quick contact actions">
         <a className="button button-primary" href={`tel:${site.phoneLink}`} onClick={trackPhoneConversion} data-testid="mobile-sticky-call">
           <Phone size={16} aria-hidden="true" /> Call
@@ -293,7 +297,7 @@ function SiteShell({ children }: { children: ReactNode }) {
           <MessageCircle size={16} aria-hidden="true" /> WhatsApp
         </a>
       </div>
-      <CookieConsent />
+      <CookieConsent visible={cookieConsentVisible} onVisibilityChange={setCookieConsentVisible} />
     </>
   );
 }

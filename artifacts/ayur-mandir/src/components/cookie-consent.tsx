@@ -1,12 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { updateGoogleConsent } from '@/lib/google-ads';
 
 const CONSENT_COOKIE = 'ayur_mandira_consent';
 const CONSENT_MAX_AGE = 60 * 60 * 24 * 180;
 
+type CookieConsentProps = {
+  visible: boolean;
+  onVisibilityChange: (visible: boolean) => void;
+};
+
 function getSavedConsent() {
   const consentCookie = document.cookie
-    .split('; ')
+    .split(';')
+    .map((cookie) => cookie.trim())
     .find((cookie) => cookie.startsWith(`${CONSENT_COOKIE}=`));
   const choice = consentCookie?.split('=')[1];
 
@@ -18,19 +24,17 @@ function saveConsent(choice: 'accepted' | 'rejected') {
   document.cookie = `${CONSENT_COOKIE}=${choice}; Max-Age=${CONSENT_MAX_AGE}; Path=/; SameSite=Lax${secure}`;
 }
 
-export function CookieConsent() {
-  const [visible, setVisible] = useState(false);
-
+export function CookieConsent({ visible, onVisibilityChange }: CookieConsentProps) {
   useEffect(() => {
     const savedConsent = getSavedConsent();
     updateGoogleConsent(savedConsent === 'accepted');
-    setVisible(savedConsent === null);
-  }, []);
+    onVisibilityChange(savedConsent === null);
+  }, [onVisibilityChange]);
 
   const chooseConsent = (choice: 'accepted' | 'rejected') => {
     saveConsent(choice);
     updateGoogleConsent(choice === 'accepted');
-    setVisible(false);
+    onVisibilityChange(false);
   };
 
   if (!visible) return null;
